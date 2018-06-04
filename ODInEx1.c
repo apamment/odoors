@@ -1010,7 +1010,7 @@ again:
              if(fgets(szIFTemp,255,pfDropFile)==NULL) goto DropFileFail;
              szIFTemp[15]='\0';
              ODStringToName(szIFTemp);
-             strcpy(od_control.user_subdate,szIFTemp);
+             strcopydate(od_control.user_subdate,szIFTemp);
 
              /* Read line 26. */
              if(fgets(szIFTemp,255,pfDropFile)==NULL) goto DropFileFail;
