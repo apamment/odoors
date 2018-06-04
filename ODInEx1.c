@@ -1048,8 +1048,7 @@ again:
              if(fgets((char *)apszDropFileInfo[14],80,pfDropFile)!=NULL)
              {
                 /* Read line 37. */
-                strncpy(od_control.user_birthday,apszDropFileInfo[7],8);
-                od_control.user_birthday[8]='\0';
+                strcopydate(od_control.user_birthday,apszDropFileInfo[7]);
 
                 /* Read line 38. */
                 strncpy(od_control.sysop_name,apszDropFileInfo[13],39);
