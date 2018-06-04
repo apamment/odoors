@@ -320,6 +320,24 @@ tODThreadHandle hFrameThread;
 #endif /* ODPLAT_WIN32 */
 
 
+static void strcopydate(char *dest, char *src) {
+	if (strlen(src) == 9) {
+		strcpy(dest, src);
+	} else if (strlen(src) == 11) {
+		dest[0] = src[0];
+		dest[1] = src[1];
+		dest[2] = src[2];
+		dest[3] = src[3];
+		dest[4] = src[4];
+		dest[5] = src[5];
+		dest[6] = src[9];
+		dest[7] = src[10];
+		dest[8] = '\0';
+	} else {
+		strcpy(dest, "01-01-71");
+	}
+}
+
 /* ----------------------------------------------------------------------------
  * od_init()
  *
@@ -936,7 +954,7 @@ read_dorinfox:
              if(fgets(szIFTemp,255,pfDropFile)==NULL) goto DropFileFail;
              szIFTemp[15]='\0';
              ODStringToName(szIFTemp);
-             strcpy(od_control.user_lastdate,szIFTemp);
+             strcopydate(od_control.user_lastdate,szIFTemp);
 
              /* Read line 18. */
              if(fgets(szIFTemp,255,pfDropFile)==NULL) goto DropFileFail;
