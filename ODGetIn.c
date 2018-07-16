@@ -82,7 +82,7 @@ tODKeySequence aKeySequences[] =
    {"\033[C", OD_KEY_RIGHT, FALSE},
    {"\033[D", OD_KEY_LEFT, FALSE},
    {"\033[M", OD_KEY_PGUP, FALSE},
-   {"\033[H\x1b[2J", OD_KEY_PGDN, FALSE},
+   {"\033[H", OD_KEY_PGDN, FALSE},
    {"\033[H", OD_KEY_HOME, FALSE},
    {"\033[K", OD_KEY_END, FALSE},
    {"\033OP", OD_KEY_F1, FALSE},
