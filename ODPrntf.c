@@ -51,7 +51,7 @@
 
 /* Size of od_printf() working buffer. Adjust this upwards if you are    */
 /* encountering difficulties when calling od_printf() with long strings. */
-#define WORK_BUFFER_SIZE   512
+#define WORK_BUFFER_SIZE   2048
 
 
 /* ----------------------------------------------------------------------------
@@ -99,7 +99,7 @@ ODAPIDEF void ODVCALL od_printf(const char *pszFormat,...)
    va_start(pArgumentList, pszFormat);
 
    /* Perform a string printf to the working buffer. */
-   vsprintf(pszWorkBuffer, pszFormat, pArgumentList);
+   vsnprintf(pszWorkBuffer, WORK_BUFFER_SIZE, pszFormat, pArgumentList);
 
    va_end(pArgumentList);
 
