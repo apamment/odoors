@@ -95,7 +95,7 @@ static INT nCurrentPersonality = 255;
  */
 ODAPIDEF void ODCALL ODMPSEnable(void)
 {
-   pfSetPersonality = od_set_personality;
+   pfSetPersonality = (SET_PERSONALITY_FUNC*)od_set_personality;
 }
 
 
